@@ -1,0 +1,13 @@
+// 模块（MLIR程序的顶层容器）
+module {
+  // 函数（func.func是MLIR的标准函数Op）
+  func.func @add_test() -> i32 {
+    // 常量Op（arith.constant是标准常量Op，生成32位整数1和2）
+    %a = arith.constant 1 : i32
+    %b = arith.constant 2 : i32
+    // 自定义的myadd.add Op：%c = myadd.add %a, %b : i32
+    %c = myadd.add %a, %b : i32
+    // 返回结果
+    return %c : i32
+  }
+}

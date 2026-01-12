@@ -1,0 +1,7 @@
+module {
+  func.func @add_test() -> i32 {
+    %a = arith.constant 1 : i32
+    %c = myadd.add %a : i32  // 非法：只有1个操作数
+    return %c : i32
+  }
+}

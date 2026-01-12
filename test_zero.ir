@@ -1,0 +1,8 @@
+module {
+  func.func @add_zero_test() -> i32 {
+    %c0_i32 = arith.constant 0 : i32
+    %c2_i32 = arith.constant 2 : i32
+    %0 = myadd.add %c0_i32, %c2_i32 : i32  // 0+2 → 应被优化为%c2_i32
+    return %0 : i32
+  }
+}
